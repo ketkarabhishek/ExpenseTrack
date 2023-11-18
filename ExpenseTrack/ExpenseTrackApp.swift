@@ -12,7 +12,9 @@ import SwiftData
 struct ExpenseTrackApp: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
-            Item.self,
+            Group.self,
+            Expense.self,
+            Person.self
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 
