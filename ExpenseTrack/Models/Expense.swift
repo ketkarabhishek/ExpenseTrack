@@ -12,14 +12,14 @@ import SwiftData
 final class Expense {
     @Attribute(.unique) var id: UUID
     var name: String
-    var amount: Float
-    var timestamp: Date
-    var paidBy: Person
-    var split: [String: Int]
+    var amount: Money
+    var date: Date
+    var paidBy: Person?
+    var split: [String: Decimal]
     
-    init(id: UUID = UUID(), name: String, amount: Float, timestamp: Date, paidBy: Person, split: [String: Int] = [:]) {
+    init(id: UUID = UUID(), name: String, amount: Money, timestamp: Date = Date.now, paidBy: Person? = nil, split: [String: Decimal] = [:]) {
         self.id = id
-        self.timestamp = timestamp
+        self.date = timestamp
         self.name = name
         self.amount = amount
         self.paidBy = paidBy

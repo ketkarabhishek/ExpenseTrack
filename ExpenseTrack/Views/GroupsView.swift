@@ -10,15 +10,13 @@ import SwiftData
 
 
 struct GroupsView: View {
-    var groups: [Group]
-    let insertGroup: () -> Void
-    let deleteGroups: (IndexSet) -> Void
+    let groups: [Group]
     
     var body: some View {
         List {
             ForEach(groups) { item in
                 NavigationLink {
-                    Text(item.name)
+                    ExpensePage(group: item)
                     
                 } label: {
                     VStack(alignment: .leading, spacing: 8){
@@ -30,7 +28,6 @@ struct GroupsView: View {
                     }
                 }
             }
-            .onDelete(perform: deleteGroups)
         }
         .navigationTitle("Trips")
         
@@ -39,8 +36,6 @@ struct GroupsView: View {
 
 #Preview {
     NavigationStack{
-        GroupsView(groups: [Group(name: "Test", fromDate: Date.now, toDate: Date.now)], insertGroup: {}) { _ in
-            
-        }
+        GroupsView(groups: [Group(name: "Test", fromDate: Date.now, toDate: Date.now)])
     }
 }
