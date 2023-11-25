@@ -16,7 +16,9 @@ struct ExpensesView: View {
         List(expenses) { item in
             VStack(alignment: .leading, spacing: 8){
                 Text(item.name)
-                Text("\(item.paidBy?.name ?? "Payer") paid $ \(item.amount.amount.formatted())")
+                    .font(.title2)
+                Text("\(item.paidBy?.name ?? "Payer") paid \(item.amount.formatted()) \(item.currency.rawValue)")
+                    .font(.subheadline)
             }
         }
         
@@ -24,6 +26,6 @@ struct ExpensesView: View {
     }
 }
 
-#Preview {
-    ExpensesView(expenses: [Expense(name: "Test 1", amount: Money(amount: 100, currency: .USD))])
-}
+//#Preview {
+//    ExpensesView(expenses: [Expense(name: "Test 1", amount: Money(amount: 100, currency: .USD), split: [])])
+//}

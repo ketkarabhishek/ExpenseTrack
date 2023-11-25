@@ -7,17 +7,190 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "EDCA15AB-91EB-420B-A5C1-ED0589FF5252"
+            uuid = "1CB2B658-3C88-4260-B57C-E90FB8D39687"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ExpenseTrack/Views/AddExpenseView.swift"
+            filePath = "ExpenseTrack/Pages/ExpensePage.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "88"
-            endingLineNumber = "88"
-            landmarkName = "body"
-            landmarkType = "24">
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "addItem(newExpense:paidBy:splits:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "1CB2B658-3C88-4260-B57C-E90FB8D39687 - b81c5c4cfea1cac"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in ExpenseTrack.ExpensePage.addItem(newExpense: ExpenseTrack.Expense, paidBy: ExpenseTrack.Person, splits: Swift.Array&lt;ExpenseTrack.Split&gt;) -&gt; ()"
+                  moduleName = "ExpenseTrack"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abhishekketkar/Desktop/AppDev/ExpenseTrack/ExpenseTrack/Pages/ExpensePage.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
+                  offsetFromSymbolStart = "192">
+               </Location>
+               <Location
+                  uuid = "1CB2B658-3C88-4260-B57C-E90FB8D39687 - b81c5c4cfea1cac"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in ExpenseTrack.ExpensePage.addItem(newExpense: ExpenseTrack.Expense, paidBy: ExpenseTrack.Person, splits: Swift.Array&lt;ExpenseTrack.Split&gt;) -&gt; ()"
+                  moduleName = "ExpenseTrack"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abhishekketkar/Desktop/AppDev/ExpenseTrack/ExpenseTrack/Pages/ExpensePage.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
+                  offsetFromSymbolStart = "180">
+               </Location>
+               <Location
+                  uuid = "1CB2B658-3C88-4260-B57C-E90FB8D39687 - b5e599980e2b060b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in ExpenseTrack.ExpensePage.addItem(newExpense: ExpenseTrack.Expense, paidBy: ExpenseTrack.Person, splits: Swift.Array&lt;ExpenseTrack.SplitModel&gt;) -&gt; ()"
+                  moduleName = "ExpenseTrack"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abhishekketkar/Desktop/AppDev/ExpenseTrack/ExpenseTrack/Pages/ExpensePage.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
+                  offsetFromSymbolStart = "180">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2C95630A-A149-4887-8673-3C746E952A42"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ExpenseTrack/Pages/ExpensePage.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "addItem(newExpense:paidBy:splits:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "2C95630A-A149-4887-8673-3C746E952A42 - b81c5c4cfea1c8d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in ExpenseTrack.ExpensePage.addItem(newExpense: ExpenseTrack.Expense, paidBy: ExpenseTrack.Person, splits: Swift.Array&lt;ExpenseTrack.Split&gt;) -&gt; ()"
+                  moduleName = "ExpenseTrack"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abhishekketkar/Desktop/AppDev/ExpenseTrack/ExpenseTrack/Pages/ExpensePage.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "212">
+               </Location>
+               <Location
+                  uuid = "2C95630A-A149-4887-8673-3C746E952A42 - b81c5c4cfea1c6e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in ExpenseTrack.ExpensePage.addItem(newExpense: ExpenseTrack.Expense, paidBy: ExpenseTrack.Person, splits: Swift.Array&lt;ExpenseTrack.Split&gt;) -&gt; ()"
+                  moduleName = "ExpenseTrack"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abhishekketkar/Desktop/AppDev/ExpenseTrack/ExpenseTrack/Pages/ExpensePage.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "312">
+               </Location>
+               <Location
+                  uuid = "2C95630A-A149-4887-8673-3C746E952A42 - b5e599980e2b06c9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in ExpenseTrack.ExpensePage.addItem(newExpense: ExpenseTrack.Expense, paidBy: ExpenseTrack.Person, splits: Swift.Array&lt;ExpenseTrack.SplitModel&gt;) -&gt; ()"
+                  moduleName = "ExpenseTrack"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abhishekketkar/Desktop/AppDev/ExpenseTrack/ExpenseTrack/Pages/ExpensePage.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "312">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4860BB31-E81C-44C5-B426-87BCF31137DE"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ExpenseTrack/Pages/ExpensePage.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "addItem(newExpense:paidBy:splits:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "4860BB31-E81C-44C5-B426-87BCF31137DE - b81c5c4cfea1c6e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in ExpenseTrack.ExpensePage.addItem(newExpense: ExpenseTrack.Expense, paidBy: ExpenseTrack.Person, splits: Swift.Array&lt;ExpenseTrack.Split&gt;) -&gt; ()"
+                  moduleName = "ExpenseTrack"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abhishekketkar/Desktop/AppDev/ExpenseTrack/ExpenseTrack/Pages/ExpensePage.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "344">
+               </Location>
+               <Location
+                  uuid = "4860BB31-E81C-44C5-B426-87BCF31137DE - b81c5c4cfea1c6e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in ExpenseTrack.ExpensePage.addItem(newExpense: ExpenseTrack.Expense, paidBy: ExpenseTrack.Person, splits: Swift.Array&lt;ExpenseTrack.Split&gt;) -&gt; ()"
+                  moduleName = "ExpenseTrack"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abhishekketkar/Desktop/AppDev/ExpenseTrack/ExpenseTrack/Pages/ExpensePage.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "312">
+               </Location>
+               <Location
+                  uuid = "4860BB31-E81C-44C5-B426-87BCF31137DE - b5e599980e2b06c9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in ExpenseTrack.ExpensePage.addItem(newExpense: ExpenseTrack.Expense, paidBy: ExpenseTrack.Person, splits: Swift.Array&lt;ExpenseTrack.SplitModel&gt;) -&gt; ()"
+                  moduleName = "ExpenseTrack"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abhishekketkar/Desktop/AppDev/ExpenseTrack/ExpenseTrack/Pages/ExpensePage.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "312">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

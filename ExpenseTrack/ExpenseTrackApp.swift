@@ -13,8 +13,9 @@ struct ExpenseTrackApp: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
             Group.self,
-//            Expense.self,
-            Person.self
+            Expense.self,
+            Person.self,
+            SplitModel.self
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 

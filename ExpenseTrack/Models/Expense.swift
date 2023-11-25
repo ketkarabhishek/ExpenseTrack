@@ -12,17 +12,31 @@ import SwiftData
 final class Expense {
     @Attribute(.unique) var id: UUID
     var name: String
-    var amount: Money
+    var amount: Decimal
+    var currency: Currency
     var date: Date
     var paidBy: Person?
-    var split: [String: Decimal]
+    var split: [SplitModel]?
+    var splitType: SplitType
+    var group: Group?
     
-    init(id: UUID = UUID(), name: String, amount: Money, timestamp: Date = Date.now, paidBy: Person? = nil, split: [String: Decimal] = [:]) {
+    init(id: UUID = UUID(), name: String, amount: Decimal, currency: Currency, date: Date = Date.now, paidBy: Person? = nil, split: [SplitModel]? = [], splitType: SplitType, group: Group? = nil) {
         self.id = id
-        self.date = timestamp
         self.name = name
         self.amount = amount
+        self.currency = currency
+        self.date = date
         self.paidBy = paidBy
         self.split = split
+        self.splitType = splitType
+        self.group = group
     }
+    
+}
+
+enum SplitType: String, Codable, CaseIterable, Identifiable  {
+    
+    case equal, custom
+    
+    var id: Self { self }
 }

@@ -8,35 +8,37 @@
 import SwiftUI
 
 struct CustomSplitView: View {
+
     @Environment(\.dismiss) var dismiss
-    @State private var customSplit: [String: Decimal] = [:]
-    @State private var diff: Decimal = 0
+    @State private var vm: CustomSplitVM
     
-    @Binding var split: [String : Decimal]
+    private let onSubmit: ([String: Decimal]) -> Void
     
-    let people: [Person]
-    let totalAmount: Decimal
-    
+    init(people:[Person], totalAmount: Decimal, onSubmit: @escaping ([String : Decimal]) -> Void) {
+        let vm = CustomSplitVM(people: people, totalAmount: totalAmount)
+        _vm = State(initialValue: vm)
+        self.onSubmit = onSubmit
+    }
+
     
     var body: some View {
         Form {
             Section{
-                ForEach(people, id: \.self) { member in
-                    SplitTextFieldView(id: member.id.uuidString, name: member.name, onChangeValue: { id, value in
-                        customSplit[id] = value
-                    })
-                    .onChange(of: customSplit) {
-                        let sum = customSplit.values.reduce(0){$0 + $1}
-                        diff = totalAmount - sum
+                ForEach(vm.people, id: \.self){s in
+                    SplitTextFieldView(id: s.id.uuidString, name: s.name) { id, value in
+                        vm.share[id] = value
                     }
                 }
             } footer: {
-                if diff < 0 {
-                    Text("$\(abs(diff).description) over.")
+                if vm.diff < 0 {
+                    Text("$\(abs(vm.diff).description) over")
+                        .foregroundStyle(.red)
                 }
                 
-                if diff > 0 {
-                    Text("$\(abs(diff).description) left.")
+                if vm.diff > 0 {
+                    Text("$\(abs(vm.diff).description) left")
+                        .font(.callout)
+                        .foregroundStyle(.blue)
                         
                 }
             }
@@ -45,10 +47,10 @@ struct CustomSplitView: View {
         .toolbar{
             ToolbarItem{
                 Button(action: {
-                    guard diff == 0 else{
+                    guard vm.diff == 0 else{
                         return
                     }
-                    split = customSplit
+                    onSubmit(vm.share)
                     dismiss()
                 }, label: {
                     Text("Save")
@@ -58,6 +60,29 @@ struct CustomSplitView: View {
     }
 }
 
-//#Preview {
-//    CustomSplitView(split: .constant([:]), people: [], totalAmount: 0)
-//}
+
+extension CustomSplitView {
+    
+    @Observable
+    class CustomSplitVM{
+        let people: [Person]
+        let totalAmount: Decimal
+        
+        var diff: Decimal {
+            return totalAmount - share.values.reduce(0, +)
+        }
+        var share: [String: Decimal]
+        
+        init(people: [Person], totalAmount: Decimal) {
+            self.people = people
+            self.totalAmount = totalAmount
+            share = [:]
+        }
+    }
+}
+
+#Preview {
+    CustomSplitView(people: [Person(name: "Test1")], totalAmount: 50){_ in
+        
+    }
+}

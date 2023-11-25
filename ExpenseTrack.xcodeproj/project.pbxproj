@@ -28,6 +28,7 @@
 		A7CEDDC82B0C257500D04FCA /* CustomSplitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CEDDC72B0C257500D04FCA /* CustomSplitView.swift */; };
 		A7CEDDCA2B0E94E600D04FCA /* Money.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CEDDC92B0E94E600D04FCA /* Money.swift */; };
 		A7CEDDCC2B0E997200D04FCA /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CEDDCB2B0E997200D04FCA /* Currency.swift */; };
+		A7CEDDCE2B0FF3CF00D04FCA /* SplitModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CEDDCD2B0FF3CF00D04FCA /* SplitModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		A7CEDDC72B0C257500D04FCA /* CustomSplitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSplitView.swift; sourceTree = "<group>"; };
 		A7CEDDC92B0E94E600D04FCA /* Money.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Money.swift; sourceTree = "<group>"; };
 		A7CEDDCB2B0E997200D04FCA /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		A7CEDDCD2B0FF3CF00D04FCA /* SplitModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +199,7 @@
 				A780AE1A2B07F9F1007C85AB /* Person.swift */,
 				A7CEDDC92B0E94E600D04FCA /* Money.swift */,
 				A7CEDDCB2B0E997200D04FCA /* Currency.swift */,
+				A7CEDDCD2B0FF3CF00D04FCA /* SplitModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -334,6 +337,7 @@
 				A7CEDDC22B08562700D04FCA /* AddExpenseView.swift in Sources */,
 				A7CEDDC42B09925B00D04FCA /* ExpensePage.swift in Sources */,
 				A780AE172B05CCB5007C85AB /* GroupsView.swift in Sources */,
+				A7CEDDCE2B0FF3CF00D04FCA /* SplitModel.swift in Sources */,
 				A78F2DF92B03EF2600DE5C99 /* ContentView.swift in Sources */,
 				A7CEDDCC2B0E997200D04FCA /* Currency.swift in Sources */,
 				A7CEDDC82B0C257500D04FCA /* CustomSplitView.swift in Sources */,

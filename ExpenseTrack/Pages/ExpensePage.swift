@@ -26,18 +26,19 @@ struct ExpensePage: View {
                 }
             }
             .sheet(isPresented: $presentAddSheet, content: {
-                AddExpenseView(isPresented: $presentAddSheet, allMembers: group.people) { newExpense, selectedMember in
-                    addItem(newExpense: newExpense, selected: selectedMember)
+                AddExpenseView(isPresented: $presentAddSheet, allMembers: group.people) { newExpense, paidBy, splits in
+                    addItem(newExpense: newExpense, paidBy: paidBy, splits: splits)
                 }
             })
     }
 }
 
 extension ExpensePage{
-    private func addItem(newExpense: Expense, selected: Person) {
+    private func addItem(newExpense: Expense, paidBy: Person, splits: [SplitModel]) {
         withAnimation {
             group.expenses.append(newExpense)
-            newExpense.paidBy = selected
+            newExpense.paidBy = paidBy
+//            newExpense.split = splits
             presentAddSheet.toggle()
         }
     }
