@@ -23,6 +23,10 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    let config = ModelConfiguration(isStoredInMemoryOnly: true)
+    let container = try! ModelContainer(for: Group.self, configurations: config)
+
+    return ContentView()
+        .modelContainer(container)
     
 }

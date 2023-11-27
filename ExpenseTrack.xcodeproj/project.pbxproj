@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A7442F632B1277B00063B2B3 /* SettleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7442F622B1277B00063B2B3 /* SettleView.swift */; };
+		A7442F652B12E8DD0063B2B3 /* Settlement.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7442F642B12E8DD0063B2B3 /* Settlement.swift */; };
 		A780AE172B05CCB5007C85AB /* GroupsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A780AE162B05CCB5007C85AB /* GroupsView.swift */; };
 		A780AE192B05F9AE007C85AB /* AddGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A780AE182B05F9AE007C85AB /* AddGroupView.swift */; };
 		A780AE1B2B07F9F1007C85AB /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = A780AE1A2B07F9F1007C85AB /* Person.swift */; };
@@ -49,6 +51,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A7442F622B1277B00063B2B3 /* SettleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettleView.swift; sourceTree = "<group>"; };
+		A7442F642B12E8DD0063B2B3 /* Settlement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settlement.swift; sourceTree = "<group>"; };
 		A780AE162B05CCB5007C85AB /* GroupsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsView.swift; sourceTree = "<group>"; };
 		A780AE182B05F9AE007C85AB /* AddGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGroupView.swift; sourceTree = "<group>"; };
 		A780AE1A2B07F9F1007C85AB /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
@@ -187,6 +191,7 @@
 				A7CEDDC12B08562700D04FCA /* AddExpenseView.swift */,
 				A7CEDDC52B0BF44900D04FCA /* SplitTextFieldView.swift */,
 				A7CEDDC72B0C257500D04FCA /* CustomSplitView.swift */,
+				A7442F622B1277B00063B2B3 /* SettleView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -200,6 +205,7 @@
 				A7CEDDC92B0E94E600D04FCA /* Money.swift */,
 				A7CEDDCB2B0E997200D04FCA /* Currency.swift */,
 				A7CEDDCD2B0FF3CF00D04FCA /* SplitModel.swift */,
+				A7442F642B12E8DD0063B2B3 /* Settlement.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -335,6 +341,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7CEDDC22B08562700D04FCA /* AddExpenseView.swift in Sources */,
+				A7442F632B1277B00063B2B3 /* SettleView.swift in Sources */,
 				A7CEDDC42B09925B00D04FCA /* ExpensePage.swift in Sources */,
 				A780AE172B05CCB5007C85AB /* GroupsView.swift in Sources */,
 				A7CEDDCE2B0FF3CF00D04FCA /* SplitModel.swift in Sources */,
@@ -348,6 +355,7 @@
 				A780AE192B05F9AE007C85AB /* AddGroupView.swift in Sources */,
 				A780AE1E2B080372007C85AB /* GroupsPage.swift in Sources */,
 				A7CEDDC62B0BF44900D04FCA /* SplitTextFieldView.swift in Sources */,
+				A7442F652B12E8DD0063B2B3 /* Settlement.swift in Sources */,
 				A78F2E252B03F47D00DE5C99 /* Group.swift in Sources */,
 				A780AE1B2B07F9F1007C85AB /* Person.swift in Sources */,
 				A78F2E272B03F9D400DE5C99 /* Expense.swift in Sources */,
