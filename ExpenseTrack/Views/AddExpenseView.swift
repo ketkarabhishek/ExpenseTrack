@@ -12,15 +12,9 @@ struct AddExpenseView: View {
     @Binding var isPresented: Bool
     let allMembers:[Person]
     let onSubmitExpense: (Expense, Person, [SplitModel]) -> Void
+
     
-    @State private var name: String = ""
-    @State private var amount: Decimal = 100
-    @State private var selectedCurrency: Currency = .USD
-    @State private var selectPaidBy: Person = Person(name: "Select")
-    @State private var splits: [SplitModel] = []
-    @State private var selectedSplitType: SplitType = .equal
-    
-    @State private var sharesMap: [String: Decimal] = [:]
+    @State private var vm = AddExpenseVM()
     
     
     
@@ -28,47 +22,47 @@ struct AddExpenseView: View {
         NavigationStack{
             Form{
                 Section("Expense Name") {
-                    TextField(text: $name) {
+                    TextField(text: $vm.name) {
                         Text("Enter name here")
                     }
                 }
                 Section("Amount") {
-                    Picker("Currency", selection: $selectedCurrency) {
+                    Picker("Currency", selection: $vm.selectedCurrency) {
                         ForEach(Currency.allCases, id: \.self) { member in
                             Text(member.rawValue)
                         }
                     }
-                    TextField(value: $amount, format: .number, label: {
+                    TextField(value: $vm.amount, format: .number, label: {
                         Text("Enter amount")
                     })
                     .keyboardType(.decimalPad)
-                    .onChange(of: amount) {
-                        guard selectedSplitType == .equal else {
+                    .onChange(of: vm.amount) {
+                        guard vm.selectedSplitType == .equal else {
                             return
                         }
                         
-                        updateEqualSplits()
+                        vm.updateEqualSplits()
                     }
                 }
                 
-                Picker("Paid By", selection: $selectPaidBy) {
+                Picker("Paid By", selection: $vm.selectPaidBy) {
                     ForEach(allMembers, id: \.self) { member in
                         Text(member.name)
                     }
                 }
                 
                 Section("Split") {
-                    Picker("Split", selection: $selectedSplitType) {
+                    Picker("Split", selection: $vm.selectedSplitType) {
                         ForEach(SplitType.allCases, id: \.self) { member in
                             Text(member.rawValue.capitalized)
                         }
                     }
                     .pickerStyle(SegmentedPickerStyle())
 
-                    if selectedSplitType == .custom {
+                    if vm.selectedSplitType == .custom {
                         NavigationLink {
-                            CustomSplitView(people: allMembers, totalAmount: amount) { newShares in
-                                sharesMap = newShares
+                            CustomSplitView(people: allMembers, totalAmount: vm.amount) { newShares in
+                                vm.sharesMap = newShares
                             }
                             Text("Custom Split")
                         } label: {
@@ -83,10 +77,15 @@ struct AddExpenseView: View {
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button {
-                        guard !name.isEmpty || amount > 0 else {
+                        guard !vm.name.isEmpty || vm.amount > 0 else {
                             return
                         }
-                        submitExpense()
+                        
+                        guard vm.verifyTotal() else {
+                            return
+                        }
+                        let res = vm.createExpense()
+                        onSubmitExpense(res.0, res.1, res.2)
                     } label: {
                         Text("Add")
                     }
@@ -103,39 +102,61 @@ struct AddExpenseView: View {
                 }
             }
             .onAppear{
-                selectPaidBy = allMembers[0]
-                
+                vm.allMembers = allMembers
+                vm.selectPaidBy = allMembers[0]
             }
         }
     }
 }
 
 extension AddExpenseView {
-    func updateEqualSplits(){
-        let share = amount / 3
-        for m in allMembers{
-            sharesMap[m.id.uuidString] = share
-        }
-    }
     
-    func generateSplits() -> [SplitModel] {
-        var res: [SplitModel] = []
-        for m in allMembers{
-            res.append(SplitModel(share: sharesMap[m.id.uuidString] ?? 0, spent: m == selectPaidBy ? amount : 0, person: m))
-        }
-        return res
-    }
-    
-    func submitExpense(){
-        guard sharesMap.values.reduce(0,+) > 0 else{
-            return
-        }
-        let splits = generateSplits()
-        let newExpense = Expense(name: name, amount: amount, currency: selectedCurrency, splitType: selectedSplitType)
-        onSubmitExpense(newExpense, selectPaidBy, splits)
-    }
 }
 
+extension AddExpenseView{
+    @Observable
+    class AddExpenseVM {
+        var allMembers:[Person] = []
+        
+        var name: String = ""
+        var amount: Decimal = 100
+        var selectedCurrency: Currency = .USD
+        var selectPaidBy: Person = Person(name: "Select")
+        var splits: [SplitModel] = []
+        var selectedSplitType: SplitType = .equal
+        
+        var sharesMap: [String: Decimal] = [:]
+        
+        func updateEqualSplits(){
+            let share = amount / 3
+            for m in allMembers{
+                sharesMap[m.id.uuidString] = share
+            }
+        }
+        
+        func generateSplits() -> [SplitModel] {
+            var res: [SplitModel] = []
+            for m in allMembers{
+                res.append(SplitModel(share: sharesMap[m.id.uuidString] ?? 0, spent: m == selectPaidBy ? amount : 0, person: m))
+            }
+            return res
+        }
+        
+        func verifyTotal() -> Bool {
+            if sharesMap.values.reduce(0,+) > 0 {
+                return true
+            }
+            return false
+        }
+        
+        func createExpense() -> (Expense, Person, [SplitModel]){
+            let splits = generateSplits()
+            let newExpense = Expense(name: name, amount: amount, currency: selectedCurrency, splitType: selectedSplitType)
+            return (newExpense, selectPaidBy, splits)
+        }
+        
+    }
+}
 
 #Preview {
     AddExpenseView(isPresented: .constant(true), allMembers: [Person(name: "Alex")]){ _,_,_ in
