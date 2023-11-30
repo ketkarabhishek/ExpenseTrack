@@ -9,17 +9,10 @@ import SwiftUI
 import SwiftData
 
 struct ContentView: View {
+    
     var body: some View {
        GroupsPage()
     }
-
-//    private func deleteItems(offsets: IndexSet) {
-//        withAnimation {
-//            for index in offsets {
-//                modelContext.delete(items[index])
-//            }
-//        }
-//    }
 }
 
 #Preview {

@@ -10,12 +10,12 @@ import SwiftUI
 struct CustomSplitView: View {
 
     @Environment(\.dismiss) var dismiss
-    @State private var vm: CustomSplitVM
+    @State private var vm: CustomSplitViewVM
     
     private let onSubmit: ([String: Decimal]) -> Void
     
     init(people:[Person], totalAmount: Decimal, onSubmit: @escaping ([String : Decimal]) -> Void) {
-        let vm = CustomSplitVM(people: people, totalAmount: totalAmount)
+        let vm = CustomSplitViewVM(people: people, totalAmount: totalAmount)
         _vm = State(initialValue: vm)
         self.onSubmit = onSubmit
     }
@@ -60,26 +60,6 @@ struct CustomSplitView: View {
     }
 }
 
-
-extension CustomSplitView {
-    
-    @Observable
-    class CustomSplitVM{
-        let people: [Person]
-        let totalAmount: Decimal
-        
-        var diff: Decimal {
-            return totalAmount - share.values.reduce(0, +)
-        }
-        var share: [String: Decimal]
-        
-        init(people: [Person], totalAmount: Decimal) {
-            self.people = people
-            self.totalAmount = totalAmount
-            share = [:]
-        }
-    }
-}
 
 #Preview {
     CustomSplitView(people: [Person(name: "Test1")], totalAmount: 50){_ in

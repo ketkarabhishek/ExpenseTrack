@@ -17,7 +17,6 @@ struct AddExpenseView: View {
     @State private var vm = AddExpenseVM()
     
     
-    
     var body: some View {
         NavigationStack{
             Form{
@@ -75,7 +74,7 @@ struct AddExpenseView: View {
             .navigationTitle("New Expense")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
-                ToolbarItem(placement: .topBarTrailing) {
+                ToolbarItem(placement: .confirmationAction) {
                     Button {
                         guard !vm.name.isEmpty || vm.amount > 0 else {
                             return
@@ -92,7 +91,7 @@ struct AddExpenseView: View {
 
                 }
                 
-                ToolbarItem(placement: .topBarLeading) {
+                ToolbarItem(placement: .cancellationAction) {
                     Button {
                         isPresented.toggle()
                     } label: {
@@ -106,55 +105,6 @@ struct AddExpenseView: View {
                 vm.selectPaidBy = allMembers[0]
             }
         }
-    }
-}
-
-extension AddExpenseView {
-    
-}
-
-extension AddExpenseView{
-    @Observable
-    class AddExpenseVM {
-        var allMembers:[Person] = []
-        
-        var name: String = ""
-        var amount: Decimal = 100
-        var selectedCurrency: Currency = .USD
-        var selectPaidBy: Person = Person(name: "Select")
-        var splits: [SplitModel] = []
-        var selectedSplitType: SplitType = .equal
-        
-        var sharesMap: [String: Decimal] = [:]
-        
-        func updateEqualSplits(){
-            let share = amount / 3
-            for m in allMembers{
-                sharesMap[m.id.uuidString] = share
-            }
-        }
-        
-        func generateSplits() -> [SplitModel] {
-            var res: [SplitModel] = []
-            for m in allMembers{
-                res.append(SplitModel(share: sharesMap[m.id.uuidString] ?? 0, spent: m == selectPaidBy ? amount : 0, person: m))
-            }
-            return res
-        }
-        
-        func verifyTotal() -> Bool {
-            if sharesMap.values.reduce(0,+) > 0 {
-                return true
-            }
-            return false
-        }
-        
-        func createExpense() -> (Expense, Person, [SplitModel]){
-            let splits = generateSplits()
-            let newExpense = Expense(name: name, amount: amount, currency: selectedCurrency, splitType: selectedSplitType)
-            return (newExpense, selectPaidBy, splits)
-        }
-        
     }
 }
 

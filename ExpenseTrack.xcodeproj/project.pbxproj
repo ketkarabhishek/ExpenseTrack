@@ -23,12 +23,15 @@
 		A78F2E162B03EF2800DE5C99 /* ExpenseTrackUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78F2E152B03EF2800DE5C99 /* ExpenseTrackUITestsLaunchTests.swift */; };
 		A78F2E252B03F47D00DE5C99 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78F2E242B03F47D00DE5C99 /* Group.swift */; };
 		A78F2E272B03F9D400DE5C99 /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78F2E262B03F9D400DE5C99 /* Expense.swift */; };
+		A7B18DE32B19414500113AC3 /* SettleViewVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B18DE22B19414500113AC3 /* SettleViewVM.swift */; };
+		A7B18DE52B1941E500113AC3 /* CustomSplitViewVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B18DE42B1941E500113AC3 /* CustomSplitViewVM.swift */; };
+		A7B18DE72B19422600113AC3 /* AddExpenseVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B18DE62B19422600113AC3 /* AddExpenseVM.swift */; };
+		A7B18DE92B19426400113AC3 /* AddGroupVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B18DE82B19426400113AC3 /* AddGroupVM.swift */; };
 		A7CEDDC02B08444000D04FCA /* ExpensesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CEDDBF2B08444000D04FCA /* ExpensesView.swift */; };
 		A7CEDDC22B08562700D04FCA /* AddExpenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CEDDC12B08562700D04FCA /* AddExpenseView.swift */; };
 		A7CEDDC42B09925B00D04FCA /* ExpensePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CEDDC32B09925B00D04FCA /* ExpensePage.swift */; };
 		A7CEDDC62B0BF44900D04FCA /* SplitTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CEDDC52B0BF44900D04FCA /* SplitTextFieldView.swift */; };
 		A7CEDDC82B0C257500D04FCA /* CustomSplitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CEDDC72B0C257500D04FCA /* CustomSplitView.swift */; };
-		A7CEDDCA2B0E94E600D04FCA /* Money.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CEDDC92B0E94E600D04FCA /* Money.swift */; };
 		A7CEDDCC2B0E997200D04FCA /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CEDDCB2B0E997200D04FCA /* Currency.swift */; };
 		A7CEDDCE2B0FF3CF00D04FCA /* SplitModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CEDDCD2B0FF3CF00D04FCA /* SplitModel.swift */; };
 /* End PBXBuildFile section */
@@ -70,12 +73,15 @@
 		A78F2E152B03EF2800DE5C99 /* ExpenseTrackUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseTrackUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		A78F2E242B03F47D00DE5C99 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		A78F2E262B03F9D400DE5C99 /* Expense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
+		A7B18DE22B19414500113AC3 /* SettleViewVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettleViewVM.swift; sourceTree = SOURCE_ROOT; };
+		A7B18DE42B1941E500113AC3 /* CustomSplitViewVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSplitViewVM.swift; sourceTree = SOURCE_ROOT; };
+		A7B18DE62B19422600113AC3 /* AddExpenseVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpenseVM.swift; sourceTree = SOURCE_ROOT; };
+		A7B18DE82B19426400113AC3 /* AddGroupVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGroupVM.swift; sourceTree = SOURCE_ROOT; };
 		A7CEDDBF2B08444000D04FCA /* ExpensesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesView.swift; sourceTree = "<group>"; };
 		A7CEDDC12B08562700D04FCA /* AddExpenseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpenseView.swift; sourceTree = "<group>"; };
 		A7CEDDC32B09925B00D04FCA /* ExpensePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensePage.swift; sourceTree = "<group>"; };
 		A7CEDDC52B0BF44900D04FCA /* SplitTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitTextFieldView.swift; sourceTree = "<group>"; };
 		A7CEDDC72B0C257500D04FCA /* CustomSplitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSplitView.swift; sourceTree = "<group>"; };
-		A7CEDDC92B0E94E600D04FCA /* Money.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Money.swift; sourceTree = "<group>"; };
 		A7CEDDCB2B0E997200D04FCA /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		A7CEDDCD2B0FF3CF00D04FCA /* SplitModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -117,6 +123,10 @@
 		A780AE1F2B080541007C85AB /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				A7B18DE22B19414500113AC3 /* SettleViewVM.swift */,
+				A7B18DE42B1941E500113AC3 /* CustomSplitViewVM.swift */,
+				A7B18DE62B19422600113AC3 /* AddExpenseVM.swift */,
+				A7B18DE82B19426400113AC3 /* AddGroupVM.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -202,7 +212,6 @@
 				A78F2E242B03F47D00DE5C99 /* Group.swift */,
 				A78F2E262B03F9D400DE5C99 /* Expense.swift */,
 				A780AE1A2B07F9F1007C85AB /* Person.swift */,
-				A7CEDDC92B0E94E600D04FCA /* Money.swift */,
 				A7CEDDCB2B0E997200D04FCA /* Currency.swift */,
 				A7CEDDCD2B0FF3CF00D04FCA /* SplitModel.swift */,
 				A7442F642B12E8DD0063B2B3 /* Settlement.swift */,
@@ -346,18 +355,21 @@
 				A780AE172B05CCB5007C85AB /* GroupsView.swift in Sources */,
 				A7CEDDCE2B0FF3CF00D04FCA /* SplitModel.swift in Sources */,
 				A78F2DF92B03EF2600DE5C99 /* ContentView.swift in Sources */,
+				A7B18DE32B19414500113AC3 /* SettleViewVM.swift in Sources */,
 				A7CEDDCC2B0E997200D04FCA /* Currency.swift in Sources */,
 				A7CEDDC82B0C257500D04FCA /* CustomSplitView.swift in Sources */,
 				A78F2DFB2B03EF2600DE5C99 /* Item.swift in Sources */,
-				A7CEDDCA2B0E94E600D04FCA /* Money.swift in Sources */,
 				A7CEDDC02B08444000D04FCA /* ExpensesView.swift in Sources */,
 				A78F2DF72B03EF2600DE5C99 /* ExpenseTrackApp.swift in Sources */,
 				A780AE192B05F9AE007C85AB /* AddGroupView.swift in Sources */,
 				A780AE1E2B080372007C85AB /* GroupsPage.swift in Sources */,
 				A7CEDDC62B0BF44900D04FCA /* SplitTextFieldView.swift in Sources */,
+				A7B18DE52B1941E500113AC3 /* CustomSplitViewVM.swift in Sources */,
 				A7442F652B12E8DD0063B2B3 /* Settlement.swift in Sources */,
 				A78F2E252B03F47D00DE5C99 /* Group.swift in Sources */,
+				A7B18DE72B19422600113AC3 /* AddExpenseVM.swift in Sources */,
 				A780AE1B2B07F9F1007C85AB /* Person.swift in Sources */,
+				A7B18DE92B19426400113AC3 /* AddGroupVM.swift in Sources */,
 				A78F2E272B03F9D400DE5C99 /* Expense.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

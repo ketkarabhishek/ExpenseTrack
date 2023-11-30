@@ -9,19 +9,21 @@ import SwiftUI
 
 struct AddGroupView: View {
     @Binding var isPresented: Bool
-    @State var name: String = ""
-    @State var memberText: String = ""
-    @State var members: [Person] = []
-    @State private var start = Date()
-    @State private var end = Date()
-    
     let onSubmit: (Group) -> Void
+    
+    @State private var vm: AddGroupVM
+    
+    init(isPresented: Binding<Bool>, onSubmit: @escaping (Group) -> Void) {
+        _isPresented = isPresented
+        self.onSubmit = onSubmit
+        _vm = State(initialValue: AddGroupVM())
+    }
 
     var body: some View {
         NavigationStack {
             List{
                 Section("Name") {
-                    TextField(text: $name) {
+                    TextField(text: $vm.name) {
                         Text("Group Name")
                     }
                 }
@@ -29,40 +31,34 @@ struct AddGroupView: View {
                 Section("Duration") {
                     DatePicker(
                         "Start Date",
-                        selection: $start,
+                        selection: $vm.start,
                         displayedComponents: [.date]
                     )
                     DatePicker(
                         "End Date",
-                        selection: $end,
+                        selection: $vm.end,
                         displayedComponents: [.date]
                     )
                 }
                 
                 Section("Members") {
                     HStack {
-                        TextField(text: $memberText) {
+                        TextField(text: $vm.memberText) {
                             Text("Add Members")
                                 
                         }
                         Button(action: {
-                            if memberText.isEmpty {
-                                return
-                            }
-                            members.append(Person(name: memberText))
-                            memberText = ""
+                            vm.addMember()
                         }, label: {
                             Image(systemName: "plus")
                         })
                     }
-                    ForEach(members){ member in
+                    ForEach(vm.members){ member in
                         HStack{
                             Text(member.name)
                             Spacer()
                             Button(action: {
-                                if let index =  members.firstIndex(of: member){
-                                    members.remove(at: index)
-                                }
+                                vm.removeMember(person: member)
                             }, label: {
                                 Image(systemName: "minus.circle")
                             })
@@ -74,20 +70,18 @@ struct AddGroupView: View {
             .navigationTitle("New Group")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
-                ToolbarItem(placement: .topBarTrailing) {
+                ToolbarItem(placement: .confirmationAction) {
                     Button {
-                        if members.isEmpty{
-                            return
+                        if let newGroup = vm.createNewGroup() {
+                            onSubmit(newGroup)
                         }
-                        let newGroup = Group(name: name, fromDate: start, toDate: end, people: members)
-                        onSubmit(newGroup)
                     } label: {
                         Text("Add")
                     }
 
                 }
                 
-                ToolbarItem(placement: .topBarLeading) {
+                ToolbarItem(placement: .cancellationAction) {
                     Button {
                         isPresented.toggle()
                     } label: {

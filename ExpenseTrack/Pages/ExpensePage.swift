@@ -9,18 +9,19 @@ import SwiftUI
 
 struct ExpensePage: View {
     
-    @Environment(\.modelContext) private var modelContext
-    var group: Group
-    @State private var presentAddSheet: Bool = false
-    @State private var presentSettleSheet: Bool = false
+    @State private var vm: ExpensePageVM
+    
+    init(group: Group) {
+        _vm = State(initialValue: ExpensePageVM(group: group))
+    }
     
     var body: some View {
-        ExpensesView(expenses: group.expenses)
-            .navigationTitle(group.name)
+        ExpensesView(expenses: vm.group.expenses)
+            .navigationTitle(vm.group.name)
             .toolbar {
                 ToolbarItem(placement: .bottomBar) {
                     Button(action: {
-                        presentAddSheet.toggle()
+                        vm.presentAddSheet.toggle()
                     }) {
                         Label("Add Item", systemImage: "plus")
                     }
@@ -28,7 +29,7 @@ struct ExpensePage: View {
                 
                 ToolbarItem(placement: .bottomBar) {
                     Button(action: {
-                        presentAddSheet.toggle()
+                        vm.presentAddSheet.toggle()
                     }) {
                         Label("Edit Trip", systemImage: "square.and.pencil")
                     }
@@ -36,36 +37,49 @@ struct ExpensePage: View {
                 
                 ToolbarItem(placement: .bottomBar) {
                     Button(action: {
-                        presentSettleSheet.toggle()
+                        vm.presentSettleSheet.toggle()
                     }, label: {
                         Text("Settle Up")
 
                     })
                 }
             }
-            .sheet(isPresented: $presentAddSheet, content: {
-                AddExpenseView(isPresented: $presentAddSheet, allMembers: group.people) { newExpense, paidBy, splits in
-                    addItem(newExpense: newExpense, paidBy: paidBy, splits: splits)
+            .sheet(isPresented: $vm.presentAddSheet, content: {
+                AddExpenseView(isPresented: $vm.presentAddSheet, allMembers: vm.group.people) { newExpense, paidBy, splits in
+                    vm.addExpense(newExpense: newExpense, paidBy: paidBy, splits: splits)
                 }
             })
-            .sheet(isPresented: $presentSettleSheet, content: {
-                SettleView(group: group)
+            .sheet(isPresented: $vm.presentSettleSheet, content: {
+                SettleView(group: vm.group)
             })
     }
 }
 
+
 extension ExpensePage{
-    private func addItem(newExpense: Expense, paidBy: Person, splits: [SplitModel]) {
-        withAnimation {
-            group.expenses.append(newExpense)
-            newExpense.paidBy = paidBy
-            newExpense.split = splits
-            group.splits.append(contentsOf: splits)
-            presentAddSheet.toggle()
+    
+    @Observable
+    class ExpensePageVM{
+        var group: Group
+        var presentAddSheet: Bool = false
+        var presentSettleSheet: Bool = false
+        
+        init(group: Group) {
+            self.group = group
+        }
+        
+        func addExpense(newExpense: Expense, paidBy: Person, splits: [SplitModel]) {
+            withAnimation {
+                group.expenses.append(newExpense)
+                newExpense.paidBy = paidBy
+                newExpense.split = splits
+                group.splits.append(contentsOf: splits)
+                presentAddSheet.toggle()
+            }
         }
     }
 }
 
-//#Preview {
-//    ExpensePage(group: Group(name: "Test", fromDate: Date(), toDate: Date()))
-//}
+#Preview {
+    ExpensePage(group: Group(name: "Test", fromDate: Date(), toDate: Date()))
+}

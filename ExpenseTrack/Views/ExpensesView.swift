@@ -26,6 +26,6 @@ struct ExpensesView: View {
     }
 }
 
-//#Preview {
-//    ExpensesView(expenses: [Expense(name: "Test 1", amount: Money(amount: 100, currency: .USD), split: [])])
-//}
+#Preview {
+    ExpensesView(expenses: [Expense(name: "Test 1", amount: 100, currency: .USD, split: [], splitType: .equal)])
+}

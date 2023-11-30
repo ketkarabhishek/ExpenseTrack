@@ -19,8 +19,9 @@ final class Expense {
     var split: [SplitModel]?
     var splitType: SplitType
     var group: Group?
+    var isRepayment: Bool
     
-    init(id: UUID = UUID(), name: String, amount: Decimal, currency: Currency, date: Date = Date.now, paidBy: Person? = nil, split: [SplitModel]? = [], splitType: SplitType, group: Group? = nil) {
+    init(id: UUID = UUID(), name: String, amount: Decimal, currency: Currency, date: Date = Date.now, paidBy: Person? = nil, split: [SplitModel]? = [], splitType: SplitType, group: Group? = nil, isRepayment: Bool = false) {
         self.id = id
         self.name = name
         self.amount = amount
@@ -30,6 +31,7 @@ final class Expense {
         self.split = split
         self.splitType = splitType
         self.group = group
+        self.isRepayment = isRepayment
     }
     
 }
