@@ -10,7 +10,7 @@
 		A7442F632B1277B00063B2B3 /* SettleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7442F622B1277B00063B2B3 /* SettleView.swift */; };
 		A7442F652B12E8DD0063B2B3 /* Settlement.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7442F642B12E8DD0063B2B3 /* Settlement.swift */; };
 		A780AE172B05CCB5007C85AB /* GroupsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A780AE162B05CCB5007C85AB /* GroupsView.swift */; };
-		A780AE192B05F9AE007C85AB /* AddGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A780AE182B05F9AE007C85AB /* AddGroupView.swift */; };
+		A780AE192B05F9AE007C85AB /* GroupEditorPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A780AE182B05F9AE007C85AB /* GroupEditorPage.swift */; };
 		A780AE1B2B07F9F1007C85AB /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = A780AE1A2B07F9F1007C85AB /* Person.swift */; };
 		A780AE1E2B080372007C85AB /* GroupsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A780AE1D2B080372007C85AB /* GroupsPage.swift */; };
 		A78F2DF72B03EF2600DE5C99 /* ExpenseTrackApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78F2DF62B03EF2600DE5C99 /* ExpenseTrackApp.swift */; };
@@ -27,6 +27,7 @@
 		A7B18DE52B1941E500113AC3 /* CustomSplitViewVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B18DE42B1941E500113AC3 /* CustomSplitViewVM.swift */; };
 		A7B18DE72B19422600113AC3 /* AddExpenseVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B18DE62B19422600113AC3 /* AddExpenseVM.swift */; };
 		A7B18DE92B19426400113AC3 /* AddGroupVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B18DE82B19426400113AC3 /* AddGroupVM.swift */; };
+		A7B18DEB2B1D1FC400113AC3 /* EditGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B18DEA2B1D1FC400113AC3 /* EditGroupView.swift */; };
 		A7CEDDC02B08444000D04FCA /* ExpensesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CEDDBF2B08444000D04FCA /* ExpensesView.swift */; };
 		A7CEDDC22B08562700D04FCA /* AddExpenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CEDDC12B08562700D04FCA /* AddExpenseView.swift */; };
 		A7CEDDC42B09925B00D04FCA /* ExpensePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CEDDC32B09925B00D04FCA /* ExpensePage.swift */; };
@@ -57,7 +58,7 @@
 		A7442F622B1277B00063B2B3 /* SettleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettleView.swift; sourceTree = "<group>"; };
 		A7442F642B12E8DD0063B2B3 /* Settlement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settlement.swift; sourceTree = "<group>"; };
 		A780AE162B05CCB5007C85AB /* GroupsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsView.swift; sourceTree = "<group>"; };
-		A780AE182B05F9AE007C85AB /* AddGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGroupView.swift; sourceTree = "<group>"; };
+		A780AE182B05F9AE007C85AB /* GroupEditorPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupEditorPage.swift; sourceTree = "<group>"; };
 		A780AE1A2B07F9F1007C85AB /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		A780AE1D2B080372007C85AB /* GroupsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsPage.swift; sourceTree = "<group>"; };
 		A78F2DF32B03EF2600DE5C99 /* ExpenseTrack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExpenseTrack.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -77,6 +78,7 @@
 		A7B18DE42B1941E500113AC3 /* CustomSplitViewVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSplitViewVM.swift; sourceTree = SOURCE_ROOT; };
 		A7B18DE62B19422600113AC3 /* AddExpenseVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpenseVM.swift; sourceTree = SOURCE_ROOT; };
 		A7B18DE82B19426400113AC3 /* AddGroupVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGroupVM.swift; sourceTree = SOURCE_ROOT; };
+		A7B18DEA2B1D1FC400113AC3 /* EditGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGroupView.swift; sourceTree = "<group>"; };
 		A7CEDDBF2B08444000D04FCA /* ExpensesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesView.swift; sourceTree = "<group>"; };
 		A7CEDDC12B08562700D04FCA /* AddExpenseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpenseView.swift; sourceTree = "<group>"; };
 		A7CEDDC32B09925B00D04FCA /* ExpensePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensePage.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 			children = (
 				A780AE1D2B080372007C85AB /* GroupsPage.swift */,
 				A7CEDDC32B09925B00D04FCA /* ExpensePage.swift */,
+				A780AE182B05F9AE007C85AB /* GroupEditorPage.swift */,
 			);
 			path = Pages;
 			sourceTree = "<group>";
@@ -196,12 +199,12 @@
 			isa = PBXGroup;
 			children = (
 				A780AE162B05CCB5007C85AB /* GroupsView.swift */,
-				A780AE182B05F9AE007C85AB /* AddGroupView.swift */,
 				A7CEDDBF2B08444000D04FCA /* ExpensesView.swift */,
 				A7CEDDC12B08562700D04FCA /* AddExpenseView.swift */,
 				A7CEDDC52B0BF44900D04FCA /* SplitTextFieldView.swift */,
 				A7CEDDC72B0C257500D04FCA /* CustomSplitView.swift */,
 				A7442F622B1277B00063B2B3 /* SettleView.swift */,
+				A7B18DEA2B1D1FC400113AC3 /* EditGroupView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -357,11 +360,12 @@
 				A78F2DF92B03EF2600DE5C99 /* ContentView.swift in Sources */,
 				A7B18DE32B19414500113AC3 /* SettleViewVM.swift in Sources */,
 				A7CEDDCC2B0E997200D04FCA /* Currency.swift in Sources */,
+				A7B18DEB2B1D1FC400113AC3 /* EditGroupView.swift in Sources */,
 				A7CEDDC82B0C257500D04FCA /* CustomSplitView.swift in Sources */,
 				A78F2DFB2B03EF2600DE5C99 /* Item.swift in Sources */,
 				A7CEDDC02B08444000D04FCA /* ExpensesView.swift in Sources */,
 				A78F2DF72B03EF2600DE5C99 /* ExpenseTrackApp.swift in Sources */,
-				A780AE192B05F9AE007C85AB /* AddGroupView.swift in Sources */,
+				A780AE192B05F9AE007C85AB /* GroupEditorPage.swift in Sources */,
 				A780AE1E2B080372007C85AB /* GroupsPage.swift in Sources */,
 				A7CEDDC62B0BF44900D04FCA /* SplitTextFieldView.swift in Sources */,
 				A7B18DE52B1941E500113AC3 /* CustomSplitViewVM.swift in Sources */,

@@ -29,7 +29,7 @@ struct ExpensePage: View {
                 
                 ToolbarItem(placement: .bottomBar) {
                     Button(action: {
-                        vm.presentAddSheet.toggle()
+                        vm.presentEditGroupSheet.toggle()
                     }) {
                         Label("Edit Trip", systemImage: "square.and.pencil")
                     }
@@ -52,6 +52,11 @@ struct ExpensePage: View {
             .sheet(isPresented: $vm.presentSettleSheet, content: {
                 SettleView(group: vm.group)
             })
+            .sheet(isPresented: $vm.presentEditGroupSheet, content: {
+                GroupEditorPage(isPresented: $vm.presentEditGroupSheet, group: vm.group) { _ in
+                    
+                }
+            })
     }
 }
 
@@ -63,6 +68,7 @@ extension ExpensePage{
         var group: Group
         var presentAddSheet: Bool = false
         var presentSettleSheet: Bool = false
+        var presentEditGroupSheet: Bool = false
         
         init(group: Group) {
             self.group = group

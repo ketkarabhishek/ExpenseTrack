@@ -18,7 +18,7 @@ struct GroupsPage: View {
         NavigationSplitView {
             GroupsView(groups: groups)
             .sheet(isPresented: $presentAddSheet, content: {
-                AddGroupView(isPresented: $presentAddSheet) { newGroup in
+                GroupEditorPage(isPresented: $presentAddSheet, group: nil) { newGroup in
                     addItem(newGroup: newGroup)
                 }
             })
