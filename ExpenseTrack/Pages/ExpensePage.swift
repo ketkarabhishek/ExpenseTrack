@@ -79,7 +79,6 @@ extension ExpensePage{
                 group.expenses.append(newExpense)
                 newExpense.paidBy = paidBy
                 newExpense.split = splits
-                group.splits.append(contentsOf: splits)
                 presentAddSheet.toggle()
             }
         }

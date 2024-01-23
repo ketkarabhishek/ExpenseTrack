@@ -16,15 +16,13 @@ final class Group {
     var toDate: Date
     var people:[Person]
     var expenses: [Expense]
-    var splits: [SplitModel]
     
-    init(id: UUID = UUID(), name: String, fromDate: Date, toDate: Date, people:[Person] = [], expenses:[Expense] = [], splits: [SplitModel] = []) {
+    init(id: UUID = UUID(), name: String, fromDate: Date, toDate: Date, people:[Person] = [], expenses:[Expense] = []) {
         self.id = id
         self.fromDate = fromDate
         self.toDate = toDate
         self.name = name
         self.people = people
         self.expenses = expenses
-        self.splits = splits
     }
 }

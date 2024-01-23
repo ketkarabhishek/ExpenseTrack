@@ -20,7 +20,19 @@ struct SettleView: View {
     var body: some View {
         NavigationStack{
             List(vm.settelments, id: \.self){s in
-                Text("\(s.payer.name) owes \(s.reciever.name) \(s.amount.formatted())")
+                HStack{
+                    Text("\(s.payer.name) owes \(s.reciever.name) \(s.amount.formatted())")
+                    Spacer()
+                    Button(action: {
+                        vm.addSettlePayment(settlement: s)
+                        vm.settelments = []
+                        vm.calculateTotalNets()
+                        vm.generateSettlements()
+                    }, label: {
+                        Text("Settle")
+                    })
+                }
+               
             }
             .toolbar{
                 ToolbarItem(placement: .principal) {
@@ -28,6 +40,7 @@ struct SettleView: View {
                 }
             }
             .onAppear{
+                vm.settelments = []
                 vm.calculateTotalNets()
                 vm.generateSettlements()
             }

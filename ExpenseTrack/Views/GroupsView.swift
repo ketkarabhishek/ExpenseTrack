@@ -10,6 +10,7 @@ import SwiftData
 
 
 struct GroupsView: View {
+    @Environment(\.modelContext) private var modelContext
     let groups: [Group]
     
     var body: some View {
@@ -28,9 +29,16 @@ struct GroupsView: View {
                     }
                 }
             }
+            .onDelete(perform: removeGroup)
         }
-        .navigationTitle("Trips")
+        .navigationTitle("Groups")
         
+    }
+    
+    private func removeGroup(at indexSet: IndexSet) {
+        for index in indexSet {
+            modelContext.delete(groups[index])
+        }
     }
 }
 

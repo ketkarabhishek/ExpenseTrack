@@ -17,11 +17,21 @@ class SettleViewVM {
         self.group = group
         self.netValues = netValues
         self.settelments = settelments
+        
+    }
+    
+    func getAllSplits() -> [SplitModel]{
+        let splits = group.expenses.reduce([]) { partialResult, exp in
+            return partialResult + (exp.split ?? [])
+        }
+        
+        return splits
     }
     
     func calculateTotalNets(){
+        let splits = getAllSplits()
         for p in group.people{
-            let filteredSplits = group.splits.filter { sp in
+            let filteredSplits = splits.filter { sp in
                 return sp.person?.id.uuidString == p.id.uuidString
             }
             let net = filteredSplits.reduce(0) { prev, sp in
@@ -49,5 +59,15 @@ class SettleViewVM {
                 }
             }
         }
+    }
+    
+    func addSettlePayment(settlement: Settlement) {
+        let splits = [SplitModel(share: 0, spent: settlement.amount, person: settlement.payer), SplitModel(share: settlement.amount, spent: 0, person: settlement.reciever)]
+        let title = settlement.payer.name + " payed " + settlement.reciever.name + " " + settlement.amount.formatted()
+        let newExpense = Expense(name: title, amount: settlement.amount, currency: .USD, splitType: .equal, isRepayment: true)
+        group.expenses.append(newExpense)
+        newExpense.paidBy = settlement.payer
+        newExpense.split = splits
+        
     }
 }

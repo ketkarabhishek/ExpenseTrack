@@ -41,7 +41,6 @@ struct GroupsPage: View {
 extension GroupsPage{
     private func addItem(newGroup: Group) {
         withAnimation {
-            print(newGroup)
             modelContext.insert(newGroup)
             presentAddSheet.toggle()
         }
